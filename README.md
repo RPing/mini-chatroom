@@ -14,7 +14,7 @@ Unix-like System
   First, run the program and specify the port to listen:
 
 ```
-./chatroom_server <LISTEN PORT>
+./chatroom_server <LISTENING PORT>
 ```
 
   Messages which is transmitted between clients and the server are as following:
@@ -22,7 +22,7 @@ Unix-like System
 --------------------------------------------------------------------------------
 * Hello Message
 
-When a client connects to server, the server sends hello message to the client, and broadcast this user's coming to other clients.
+  When a client connects to server, the server sends hello message to the client, and broadcast this user's coming to other clients.
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;To the new connected client:
@@ -36,7 +36,7 @@ When a client connects to server, the server sends hello message to the client, 
 --------------------------------------------------------------------------------
 * Offline Message
 
-When a client disconnect to server, the server sends offline message to all the other online clients to tell them someone has been offline.
+  When a client disconnect to server, the server sends offline message to all the other online clients to tell them someone has been offline.
 
 ```
 [Server] <USERNAME> is offline.
@@ -51,8 +51,8 @@ When a client disconnect to server, the server sends offline message to all the 
 who
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;Server will reply to sender a list of online users and tag the sender client.
-&nbsp;&nbsp;&nbsp;&nbsp;For N user, Server will send N lines.
+&nbsp;&nbsp;&nbsp;&nbsp;Server will reply to sender a list of online users and tag the sender client.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;For N user, Server will send N lines.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Each of them shows details of a user.
 
 ```
@@ -69,8 +69,8 @@ who
 name <NEW USERNAME>
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;Server has to verify if the new name is valid which means the input name is
-&nbsp;&nbsp;&nbsp;&nbsp;(1) not anonymous, (2) unique, and (3) 2~12 English letters.
+&nbsp;&nbsp;&nbsp;&nbsp;Server has to verify if the new name is valid which means the input name is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(1) not anonymous, (2) unique, and (3) 2~12 English letters.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;It will reject user's request if this name cannot fit the rule.
 
 
@@ -105,8 +105,7 @@ name <NEW USERNAME>
 tell <USERNAME> <MESSAGE>
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;Server will send an error message back to the sender if either the sender's name or the
-&nbsp;&nbsp;&nbsp;&nbsp;receiver's name is anonymous.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Server will send an error message back to the sender if either the sender's name or the receiver's name is anonymous.</p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;If the sender's name is anonymous
 
@@ -120,8 +119,7 @@ tell <USERNAME> <MESSAGE>
 
     [Server] ERROR: The receiver doesn't exist.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Otherwise, the server sends the private message to the specific client and sends back a
-&nbsp;&nbsp;&nbsp;&nbsp;notification to the sender.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Otherwise, the server sends the private message to the specific client and sends back a notification to the sender.</p>
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;To sender whose message is sent:
@@ -141,8 +139,7 @@ tell <USERNAME> <MESSAGE>
 yell <MESSAGE>
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;While receiving the command from a user, server adds `<SENDER USERNAME>` at the head of
-&nbsp;&nbsp;&nbsp;&nbsp;it and broadcasts to all users including the sender.
+<p>&nbsp;&nbsp;&nbsp;&nbsp;While receiving the command from a user, server adds `<SENDER USERNAME>` at the head of it and broadcasts to all users including the sender.</p>
 
 ```
 [Server] <SENDER USERNAME> yell <MESSAGE>
