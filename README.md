@@ -7,7 +7,7 @@ A mini chatroom program using TCP socket.
 Unix-like System
 
 ### Usage
-** Server **
+**Server**
 
   A server can serve multiple clients simultaneously. After a connection is built, server will send a hello message to the client, and give the client a username 'anonymous'. Clients can send different commands to server.
 
@@ -21,8 +21,8 @@ Unix-like System
 
 --------------------------------------------------------------------------------
 * Hello Message
-  When a client connects to server, the server sends hello message to the client,
-  and broadcast this user's coming to other clients.
+
+When a client connects to server, the server sends hello message to the client, and broadcast this user's coming to other clients.
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;To the new connected client:
@@ -35,7 +35,8 @@ Unix-like System
 
 --------------------------------------------------------------------------------
 * Offline Message
-  When a client disconnect to server, the server sends offline message to all the other online clients to tell them someone has been offline.
+
+When a client disconnect to server, the server sends offline message to all the other online clients to tell them someone has been offline.
 
 ```
 [Server] <USERNAME> is offline.
@@ -43,6 +44,7 @@ Unix-like System
 
 --------------------------------------------------------------------------------
 * Who Message
+
   A client can type command below to list all online users.
 
 ```
@@ -60,6 +62,7 @@ who
 
 --------------------------------------------------------------------------------
 * Change Username Message
+
   A client can type command below to change his/her username.
 
 ```
@@ -95,6 +98,7 @@ name <NEW USERNAME>
 
 --------------------------------------------------------------------------------
 * Private Message
+
   A client can send a private message to a specific client.
 
 ```
@@ -130,6 +134,7 @@ tell <USERNAME> <MESSAGE>
 
 --------------------------------------------------------------------------------
 * Broadcast Message
+
   A client can send a broadcast message to all clients.
 
 ```
@@ -145,6 +150,7 @@ yell <MESSAGE>
 
 --------------------------------------------------------------------------------
 * Error Command
+
   Commands which haven't been declared above are error commands.
   When a server receives an error command, it should send an error message back to the sending client.
 
@@ -154,7 +160,7 @@ yell <MESSAGE>
 
 --------------------------------------------------------------------------------
 
-** Client **
+**Client**
 
   A client cannot connect to more than one server at the same time.
   Users should give server IP and Port as the arguments of client program.
@@ -166,6 +172,7 @@ yell <MESSAGE>
 
 --------------------------------------------------------------------------------
 * Exit Command
+
   User can type command below to terminate the process at any time.
 
 ```
